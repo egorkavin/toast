@@ -12,13 +12,14 @@ button {
   border: 0; }
 
 .toast {
-  position: absolute;
   width: 300px;
   padding: 15px;
   background-color: #1b1b1b;
   border-radius: 10px;
   color: #f9f9f9;
   font-size: 14px; }
+  .toast:not(:last-child) {
+    margin-bottom: 15px; }
   .toast--success {
     border: 1px solid lightgreen; }
   .toast--warning {
@@ -34,3 +35,18 @@ button {
     font-size: 20px;
     color: inherit;
     cursor: pointer; }
+
+.toast-container {
+  position: absolute; }
+  .toast-container--top-left {
+    top: 0;
+    left: 0; }
+  .toast-container--top-right {
+    top: 0;
+    right: 0; }
+  .toast-container--bottom-left {
+    bottom: 0;
+    left: 0; }
+  .toast-container--bottom-right {
+    bottom: 0;
+    right: 0; }
