@@ -1,0 +1,18 @@
+@import '../node_modules/normalize.css/normalize.css';
+
+:root {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #222;
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: 0;
+}
+
+@import './toast';
