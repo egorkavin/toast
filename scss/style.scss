@@ -15,6 +15,16 @@ button {
     border: 0;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 @import './toast';
 
 @import './toast-container';
+
+@import './toast-form';

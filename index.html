@@ -13,19 +13,41 @@
 <body>
     <div class="container">
         <main class="main">
-            <div class="toast toast--warning">
-                <div class="toast__header">
-                    <strong class="toast__title">Toast</strong>
-                    <button class="toast__button toast__button--close">
-                        &#10005
-                    </button>
+            <form class="toast-form">
+                <div class="toast-form__item">
+                    <label for="variant">Variant</label>
+                    <select name="variant" id="variant" required>
+                        <option value="warning">Warning</option>
+                        <option value="info">Info</option>
+                        <option value="error">Error</option>
+                        <option value="success">Success</option>
+                    </select>
                 </div>
-                <hr>
-                <div class="toast__content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eaque ipsum nulla earum distinctio
-                    deserunt.
+                <div class="toast-form__item">
+                    <label for="position">Position</label>
+                    <select name="position" id="position" required>
+                        <option value="top-right">top-right</option>
+                        <option value="top-left">top-left</option>
+                        <option value="bottom-right">bottom-right</option>
+                        <option value="bottom-left">bottom-left</option>
+                    </select>
                 </div>
-            </div>
+                <div class="toast-form__item">
+                    <label for="duration">Auto hide duration</label>
+                    <input type="number" name="duration" id="duration" placeholder="Leave empty to not hide">
+                </div>
+                <div class="toast-form__item">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" required></textarea>
+                </div>
+                <div class="toast-form__item">
+                    <input type="checkbox" name="close-on-click" id="close-on-click">
+                    <label for="close-on-click">Close on click</label>
+                </div>
+                <button class="toast-form__submit" type="submit">
+                    Create toast
+                </button>
+            </form>
         </main>
     </div>
     <script src="js/index.js"></script>
