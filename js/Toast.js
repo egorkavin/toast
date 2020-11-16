@@ -32,16 +32,13 @@ export default class Toast extends ToastOptions {
     }
 
     getToastHTML() {
-        const button = `
-            <button class="toast__button toast__button--close">
-                &#10005
-            </button>
-        `
         return `
             <div id="${Toast.ToastKey}" class="toast toast--${this.variant}">
                 <div class="toast__header">
                     <strong class="toast__title">Toast</strong>
-                    ${this.closeOnClick ? button : ''}
+                    <button class="toast__button toast__button--close">
+                        &#10005
+                    </button>
                 </div>
                 <hr>
                 <div class="toast__content">
@@ -57,7 +54,10 @@ export default class Toast extends ToastOptions {
 
     addCloseEvent(key) {
         const toastToClose = document.querySelector(`#${key}`)
-        toastToClose.addEventListener('click', () => toastToClose.remove())
+        toastToClose.querySelector('button').addEventListener('click', () => toastToClose.remove())
+        if (this.closeOnClick) {
+            toastToClose.addEventListener('click', () => toastToClose.remove())
+        }
     }
 
     show() {
@@ -65,9 +65,7 @@ export default class Toast extends ToastOptions {
         if (this.duration !== '') {
             this.setDuration(Toast.ToastKey)
         }
-        if (this.closeOnClick) {
-            this.addCloseEvent(Toast.ToastKey)
-        }
+        this.addCloseEvent(Toast.ToastKey)
         return Toast.ToastKey
     }
 }
