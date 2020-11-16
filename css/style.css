@@ -74,7 +74,8 @@ button {
     .toast-form__item textarea {
       resize: vertical; }
     .toast-form__item #close-on-click {
-      width: auto; }
+      width: auto;
+      cursor: pointer; }
   .toast-form__submit {
     width: 100%;
     height: 30px;
