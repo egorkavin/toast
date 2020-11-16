@@ -37,8 +37,12 @@
                     <input type="number" name="duration" id="duration" placeholder="Leave empty to not hide">
                 </div>
                 <div class="toast-form__item">
+                    <label for="parent-selector">Parent selector</label>
+                    <input type="text" name="parent-selector" id="parent-selector" placeholder="Body by default">
+                </div>
+                <div class=" toast-form__item">
                     <label for="content">Content</label>
-                    <textarea id="content" name="content" required></textarea>
+                    <textarea id="content" name="content" placeholder="Content" required></textarea>
                 </div>
                 <div class="toast-form__item">
                     <input type="checkbox" name="close-on-click" id="close-on-click">
@@ -50,7 +54,7 @@
             </form>
         </main>
     </div>
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 
 </html>
